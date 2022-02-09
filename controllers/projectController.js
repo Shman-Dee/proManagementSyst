@@ -22,4 +22,7 @@ module.exports = {
       res.json(e);
     }
   },
+  createProjectView: (req, res) => {
+    res.render('createProject')
+  }
 };
