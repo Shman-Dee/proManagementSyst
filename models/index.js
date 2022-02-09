@@ -2,12 +2,12 @@ const User = require("./User");
 const Task = require("./Task");
 const Project = require("./Project");
 
-Project.hasMany(User, {
-    foreignKey: "projectId",
+User.hasMany(Project, {
+    foreignKey: "userId",
 });
 
-User.belongsTo(Project, {
-    foreignKey: "projectId",
+Project.belongsTo(User, {
+    foreignKey: "userId",
 });
 
 Project.hasMany(Task, {
