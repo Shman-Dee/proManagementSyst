@@ -3,34 +3,24 @@ const sequelize = require("../config");
 
 class Project extends Model {}
 
-Project.init(
-  {
+Project.init({
     id: {
-      type: DataTypes.UUID,
-      defaultValue: UUIDV4,
-      primaryKey: true,
+        type: DataTypes.UUID,
+        defaultValue: UUIDV4,
+        primaryKey: true,
     },
     projectName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [4],
-      },
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [4],
+        },
     },
-    userId: {
-      type: DataTypes.UUID,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
-  },
-  {
+}, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     modelName: "project",
-  }
-);
+});
 
 module.exports = Project;
