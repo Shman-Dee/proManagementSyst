@@ -1,10 +1,12 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
 const {
-    createProject
-} = require('../../controllers/projectController');
+  createProject,
+  getAllProjects,
+} = require("../../controllers/projectController");
 
-router.route('/')
+router.route("/")
     .post(createProject)
-
+    .get(getAllProjects);
+    
 module.exports = router;
