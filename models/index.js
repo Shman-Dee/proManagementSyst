@@ -19,13 +19,13 @@ Task.belongsTo(Project, {
     foreignKey: "projectId",
 });
 
-User.hasMany(Task, {
-    foreignKey: "userId",
-});
+// User.hasMany(Task, {
+//     foreignKey: "userId",
+// });
 
-Task.belongsTo(User, {
-    foreignKey: "userId",
-});
+// Task.belongsTo(User, {
+//     foreignKey: "userId",
+// });
 
 module.exports = {
     User,

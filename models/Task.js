@@ -16,10 +16,10 @@ Task.init({
             len: [4],
         },
     },
-    userId: {
+    projectId: {
         type: DataTypes.UUID,
         references: {
-            model: "user",
+            model: "project",
             key: "id",
         },
     },
