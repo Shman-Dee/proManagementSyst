@@ -27,7 +27,7 @@ Task.init({
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: "project",
+    modelName: "task",
 });
 
 module.exports = Task;
