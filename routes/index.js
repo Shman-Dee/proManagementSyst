@@ -4,9 +4,11 @@ const taskRoutes = require('./taskRoutes');
 const userRoutes = require("./userRoutes");
 const { homeView } = require("../controllers/homeController");
 const { createProjectView } = require("../controllers/projectController");
+const { loginView } = require('../controllers/userController')
 
 
 router.get("/", homeView);
+router.get('/login', loginView);
 
 router.use("/projects", projectRoutes);
 router.use("/users", userRoutes);

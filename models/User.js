@@ -1,5 +1,6 @@
 const { Model, DataTypes, UUIDV4 } = require("sequelize");
 const sequelize = require("../config");
+const bcrypt = require('bcryptjs');
 
 class User extends Model {}
 
@@ -39,6 +40,19 @@ User.init(
     timestamps: true,
     freezeTableName: true,
     modelName: "user",
+    hooks: {
+			beforeCreate: async (user) => {
+				const salt = await bcrypt.genSalt(10);
+				const hashedPassword = await bcrypt.hash(user.password, salt);
+				user.email = user.email.toLowerCase();
+				user.password = hashedPassword;
+				return user;
+			},
+			beforeUpdate: async (user) => {
+				user.email = user.email.toLowerCase();
+				return user;
+			},
+    }
   }
 );
 
