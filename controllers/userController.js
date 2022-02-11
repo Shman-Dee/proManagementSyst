@@ -14,5 +14,16 @@ module.exports = {
         } catch (error) {
             res.json(error);
         }
+    },
+    getAllUsers: async(req, res)=>{
+        try {
+            const usersData = await User.findAll({});
+            const users = usersData.map(user =>user.get({ plain: true}));
+            res.json(users);
+        } catch (error) {
+            res.json(error);
+        }
+
     }
+
 };
