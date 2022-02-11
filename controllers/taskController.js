@@ -21,5 +21,17 @@ module.exports = {
         } catch (error) {
             res.json(error);
         }
+    },
+    getTaskById: async(req, res) => {
+        try {
+            const taskData = await Task.findByPk(req.params.taskId);
+            const task = taskData.get({ plain: true });
+            res.render('singleTask', {
+                task
+            });
+
+        } catch (error) {
+
+        }
     }
 };
