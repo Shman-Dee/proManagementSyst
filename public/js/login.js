@@ -17,7 +17,7 @@ async function loginUser(event) {
           headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-          document.location.replace('/projects');
+          location.href = ('/projects');
         } else {
             loginError.textContent = 'Login error - Please check your email and password and try again.'
         }
