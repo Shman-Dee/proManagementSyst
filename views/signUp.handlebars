@@ -1,0 +1,51 @@
+<div class="container">
+  <h1 class="h3 mb-3 fw-normal">Please sign up!</h1>
+  <h1 class="h3 mb-3 fw-normal">Already have an acount?
+    <a href="/login">Login in here</a></h1>
+  <br />
+  <div id="signUpError" class="error bg-danger text-white"></div>
+  <form>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="firstNameField"
+        placeholder="First Name"
+      />
+      <label for="firstNameField">First Name</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="lastNameField"
+        placeholder="Last Name"
+      />
+      <label for="lastNameField">Last Name</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="emailField"
+        placeholder="Email address"
+      />
+      <label for="emailField">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="passwordField"
+        placeholder="Password"
+      />
+      <label for="passwordField">Password</label>
+    </div>
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      id="signUpBtn"
+    >Sign up</button>
+  </form>
+</div>
+<script src="./js/signup.js"></script>

@@ -2,6 +2,9 @@ const { Project, Task } = require("../models");
 
 module.exports = {
   createProject: async (req, res) => {
+    if (!req.session.user) {
+      res.redirect("/login");
+    }
     const { projectName, userId } = req.body;
     try {
       const newProject = await Project.create({
@@ -14,6 +17,9 @@ module.exports = {
     }
   },
   getAllProjects: async (req, res) => {
+    if (!req.session.user) {
+      res.redirect("/login");
+    }
     try {
       const projectsData = await Project.findAll();
       const projects = projectsData.map((project) =>
@@ -25,6 +31,9 @@ module.exports = {
     }
   },
   createProjectView: (req, res) => {
+    if (!req.session.user) {
+      res.redirect("/login");
+    }
     res.render("createProject");
   },
   getProjectById: async (req, res) => {
