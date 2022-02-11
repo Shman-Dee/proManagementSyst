@@ -29,29 +29,35 @@ module.exports = {
     login: async (req, res) => {
         const { email, password } = req.body;
         if (!email || !password) {
-           return res.redirect('/login');
+            return res.status(401).json({ error: 'You must provide a valid email and password'});
         }
+
         try {
-            const userData = await User.findOne({
+            const userData = await User.findOne({ 
                 where: {
                     email: req.body.email
                 }
-            });
+             });
+             if (!userData) {
+                return res.status(400).json({ error: 'No user with that email'});
+             }
             const userFound = userData.get({ plain: true });
             if (!userFound) {
-               return res.status(400).json({ error: 'No user with that email'});
+                return res.status(400).json({ error: 'No user with that email'});
             }
+            console.log(userFound);
             const isMatchingPassword = await bcrypt.compare(password, userFound.password);
             if (!isMatchingPassword) {
-                return res.status(401).json({ error: 'INvalid password'});
+                return res.status(401).json({ error: 'Invalid password'});
             }
-
+            console.log(isMatchingPassword);
             req.session.save(() => {
-                req.session.loggedIN = true;
+                req.session.loggedIn = true;
                 req.session.user = userFound;
                 req.session.user_id = userFound.id;
-                res.json({ success: true});
-            })
+                res.json({ success: true });
+            });
+            
         } catch (error) {
             res.json(error);
         };
