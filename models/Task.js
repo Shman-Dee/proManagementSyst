@@ -1,4 +1,4 @@
-const { Model, DataTypes, UUIDV4 } = require("sequelize");
+const { Model, DataTypes, UUIDV4, TEXT } = require("sequelize");
 const sequelize = require("../config");
 
 class Task extends Model {}
@@ -15,6 +15,14 @@ Task.init({
         validate: {
             len: [4],
         },
+    },
+    taskDesc: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    completed: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
     },
     projectId: {
         type: DataTypes.UUID,

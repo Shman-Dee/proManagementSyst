@@ -2,10 +2,12 @@ const { Task } = require('../models');
 
 module.exports = {
     createTask: async(req, res) => {
-        const { taskName, projectId } = req.body;
+        console.log(req.body);
+        const { taskName, taskDesc, projectId } = req.body;
         try {
             const task = await Task.create({
                 taskName,
+                taskDesc,
                 projectId
             });
             res.json(task);
@@ -14,10 +16,10 @@ module.exports = {
         }
     },
     getTaskById: async(req, res) => {
+        if (!req.session.user) {
+            res.redirect("/login");
+        }
         try {
-            if (!req.session.user) {
-                res.redirect("/login");
-            }
             const taskData = await Task.findByPk(req.params.taskId);
             const task = taskData.get({ plain: true });
             res.render('singleTask', {

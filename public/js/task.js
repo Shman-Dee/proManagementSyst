@@ -1,4 +1,5 @@
 const $taskName = document.querySelector('#taskName');
+const $taskDesc = document.querySelector('#taskDesc');
 const $createTaskBtn = document.querySelector('#createTaskBtn');
 
 async function createTask(e) {
@@ -16,6 +17,7 @@ async function createTask(e) {
         //make sure to serialize your JSON body
         body: JSON.stringify({
             taskName: $taskName.value,
+            taskDesc: $taskDesc.value,
             projectId
         })
     });
