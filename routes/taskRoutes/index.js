@@ -3,7 +3,7 @@ const { createTask, getAllTasks, getTaskById } = require('../../controllers/task
 
 router.route('/')
     .post(createTask)
-    .get(getAllTasks)
+    // .get(getAllTasks)
 
 router.route('/:taskId')
     .get(getTaskById)
