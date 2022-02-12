@@ -1,4 +1,7 @@
-{{#each this}}
-  <a href="/tasks/{{id}}">{{taskName}}</a>
-
-{{/each}}
+<ul>
+  {{#each this}}
+    <li>
+      <a href="/tasks/{{id}}">{{taskName}}</a>
+    </li>
+  {{/each}}
+</ul>
