@@ -30,5 +30,22 @@ module.exports = {
         } catch (error) {
 
         }
+    },
+    updateTask: async(req, res) => {
+        if (!req.session.user) {
+            res.redirect("/login");
+        }
+        try {
+            const updateTask = Task.update({
+                completed: req.body.completed,
+            }, {
+                where: {
+                    id: req.params.taskId
+                }
+            });
+            res.status(200).json(updateTask);
+        } catch (error) {
+            res.json(error);
+        }
     }
 };
