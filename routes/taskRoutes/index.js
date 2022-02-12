@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { createTask, getAllTasks, getTaskById } = require('../../controllers/taskController');
+const { createTask, getAllTasks, getTaskById, updateTask } = require('../../controllers/taskController');
 
 router.route('/')
     .post(createTask)
@@ -7,5 +7,7 @@ router.route('/')
 
 router.route('/:taskId')
     .get(getTaskById)
+
+router.put('/:taskId', updateTask)
 
 module.exports = router;

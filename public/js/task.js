@@ -1,5 +1,6 @@
 const $taskName = document.querySelector('#taskName');
 const $taskDesc = document.querySelector('#taskDesc');
+const $completed = document.querySelector('#completed');
 const $createTaskBtn = document.querySelector('#createTaskBtn');
 
 async function createTask(e) {
@@ -24,4 +25,26 @@ async function createTask(e) {
     window.location.href = `/projects/${projectId}`;
 }
 
-$createTaskBtn.addEventListener('click', createTask)
+async function updateTask() {
+    alert('hit');
+    const taskId = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
+    await fetch(`/tasks/${taskId}`, {
+        method: "put",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+
+        //make sure to serialize your JSON body
+        body: JSON.stringify({
+            completed: $completed.checked,
+        })
+    });
+    location.href = `/tasks/${taskId}`
+}
+
+$completed.addEventListener('change', updateTask);
+
+$createTaskBtn.addEventListener('click', createTask);
