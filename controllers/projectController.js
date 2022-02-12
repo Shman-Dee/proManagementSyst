@@ -37,9 +37,14 @@ module.exports = {
         if (!req.session.user) {
             res.redirect("/login");
         }
-        res.render("createProject");
+        res.render("createProject", {
+            loggedInUser: req.session.user || null,
+        });
     },
     getProjectById: async(req, res) => {
+        if (!req.session.user) {
+            res.redirect("/login");
+        }
         try {
             const projectData = await Project.findOne({
                 where: {
