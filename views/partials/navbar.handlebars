@@ -17,18 +17,21 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/createProject">Create Project</a>
-        </li>
-        <li class="nav-item">
-          <a id="loginBtn" class="nav-link" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a id="logoutBtn" class="nav-link" href="#">Logout</a>
-        </li>
+        {{#unless loggedInUser}}
+          <li class="nav-item">
+            <a id="loginBtn" class="nav-link" href="/login">Login</a>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/createProject">Create Project</a>
+          </li>
+          <li class="nav-item">
+            <a id="logoutBtn" class="nav-link" href="#">Logout</a>
+          </li>
+        {{/unless}}
 
       </ul>
     </div>

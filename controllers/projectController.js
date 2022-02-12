@@ -25,7 +25,10 @@ module.exports = {
       const projects = projectsData.map((project) =>
         project.get({ plain: true })
       );
-      res.render("projects", { projects });
+      res.render("projects", { 
+        projects,
+        loggedInUser: req.session.user || null,
+      });
     } catch (e) {
       res.json(e);
     }
@@ -66,6 +69,7 @@ module.exports = {
       res.render("singleProject", {
         project,
         tasks,
+        loggedInUser: req.session.user || null,
       });
     } catch (error) {
       res.json(error);
