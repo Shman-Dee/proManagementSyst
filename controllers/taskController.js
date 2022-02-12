@@ -13,25 +13,16 @@ module.exports = {
             res.json(error);
         }
     },
-    // getAllTasks: async(req, res) => {
-        
-    //     try {
-    //         const tasksData = await Task.findAll({
-    //           order: [["createdAt", "DESC"]],
-    //         });
-    //         const task = tasksData.map(task => task.get({ plain: true }));
-    //         res.json(task);
-    //     } catch (error) {
-    //         res.json(error);
-    //     }
-    //     console.log(task)
-    // },
     getTaskById: async(req, res) => {
         try {
+            if (!req.session.user) {
+                res.redirect("/login");
+            }
             const taskData = await Task.findByPk(req.params.taskId);
             const task = taskData.get({ plain: true });
             res.render('singleTask', {
-                task
+                task,
+                loggedInUser: req.session.user || null,
             });
 
         } catch (error) {
