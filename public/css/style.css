@@ -1,3 +1,11 @@
 .error {
     font-size: 1.2rem;
 }
+
+.card {
+    width: 300px;
+}
+
+section {
+    width: 90%;
+}
