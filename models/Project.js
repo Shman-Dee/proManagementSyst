@@ -17,6 +17,17 @@ Project.init(
         len: [4],
       },
     },
+    projectDesc: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [20],
+      },
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     userId: {
       type: DataTypes.UUID,
       references: {
