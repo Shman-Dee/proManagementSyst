@@ -3,6 +3,13 @@
   <p>{{task.taskDesc}}</p>
   <form>
     <label for="completed" class="form-label">Completed</label>
-    <input type="checkbox" id="completed" />
+    {{#if task.completed}}
+      <input type="checkbox" id="completed" value="false" checked />
+    {{else}}
+      <input type="checkbox" id="completed" value="true" />
+    {{/if}}
+    {{!-- <button id="completedBtn">Submit</button> --}}
+    <input type="hidden" id="projectId" value="{{task.projectId}}">
   </form>
 </section>
+<script src="../js/updateTask.js"></script>

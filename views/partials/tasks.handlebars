@@ -1,7 +1,19 @@
-<ul>
+  <div class="row">
+
   {{#each this}}
-    <li>
-      <a href="/tasks/{{id}}">{{taskName}}</a>
-    </li>
+      <div class="col-12 col-md-3 m-4">
+        <div class="card">
+            <div class="card-header">
+              {{taskName}} 
+              {{#if completed}}
+                - Completed
+            {{/if}}
+            </div>
+            <div class="card-body">
+              <p class="card-text">{{taskDesc}}</p>
+              <a href="/tasks/{{id}}" class="btn btn-primary">View Task</a>
+            </div>
+          </div>
+      </div>
   {{/each}}
-</ul>
+    </div>
