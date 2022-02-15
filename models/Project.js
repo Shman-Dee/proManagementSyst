@@ -38,7 +38,7 @@ Project.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     modelName: "project",
   }

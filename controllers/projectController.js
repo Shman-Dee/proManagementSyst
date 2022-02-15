@@ -22,7 +22,13 @@ module.exports = {
       res.redirect("/login");
     }
     try {
-      const projectsData = await Project.findAll();
+      const projectsData = await Project.findAll(
+        {
+          order:[
+            ["createdAt","DESC"]
+        ]
+        }
+      );
       const projects = projectsData.map((project) =>
         project.get({ plain: true })
       );

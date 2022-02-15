@@ -1,14 +1,22 @@
-<section id="section">
-  <div class="row">
-    <div class="col-12 col-md-3 m-4">
-      <h1>{{project.projectName}}</h1>
-      <p>
-        {{{project.projectDesc}}}
-      </p>
-      <h3>Add Tasks</h3>
-      {{>taskForm}}
-      <h3>Tasks</h3>
-      {{>tasks tasks}}
+<div class="container">
+  <section id="section" class="justify-content-center">
+    <div class="row">
+      <div class="col-12">
+        <h1>{{project.projectName}}</h1>
+        <p>
+          {{{project.projectDesc}}}
+        </p>
+        <h3>Add Tasks</h3>
+        {{>taskForm}}
+        <h3>Tasks</h3>
+        {{>tasks tasks}}
+      </div>
     </div>
-  </div>
-</section>
+    <button class="btn btn-primary" onclick="goBack()">Back to all Projects</button>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+  </section>
+</div>
