@@ -1,13 +1,14 @@
-<div id="container" class="container-fluid">
-  <section id="section" class="">
-    <h1>{{project.projectName}}</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam totam quia quam officia rem deleniti dolores quos illo doloribus sed maxime reprehenderit laborum nam provident minus et corporis blanditiis aspernatur, modi tenetur! Fugiat molestiae perferendis enim, ducimus tenetur qui quam iure aspernatur repellat dicta, numquam quis aliquid minima mollitia dolore nisi. Exercitationem ex molestias minima possimus dolor recusandae culpa. Esse culpa consequatur nisi amet dolorem! Tempora excepturi non cum iure quisquam. Sunt nobis libero molestiae sint dignissimos soluta vitae veniam commodi, iure at! Quibusdam suscipit voluptates eum, alias minima iure earum accusantium debitis, sunt eveniet quod consequatur obcaecati vel recusandae?
-    </p>
-    <h3>Add Tasks</h3>
-    {{>taskForm}}
-    <h3>Tasks</h3>
-    {{>tasks tasks}}
-  </section>
-
-</div>
+<section id="section">
+  <div class="row">
+    <div class="col-12 col-md-3 m-4">
+      <h1>{{project.projectName}}</h1>
+      <p>
+        {{{project.projectDesc}}}
+      </p>
+      <h3>Add Tasks</h3>
+      {{>taskForm}}
+      <h3>Tasks</h3>
+      {{>tasks tasks}}
+    </div>
+  </div>
+</section>

@@ -3,9 +3,15 @@
 }
 
 .card {
-    width: 300px;
+    width: 20em;
+    min-height: 14em;
 }
 
-section {
-    width: 90%;
+.card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#editor {
+    height: 20em;
 }

@@ -1,12 +1,12 @@
 const $projectName = document.querySelector("#projectName");
 const $createProjectBtn = document.querySelector("#createProjectBtn");
-const $projectDesc = document.querySelector("#projectDesc");
+const $projectDesc = document.querySelector(".projectDesc");
 
 async function createProject(e) {
   e.preventDefault();
-
+  console.log($projectDesc.children[0].innerHTML);
   const response = await fetch("/projects", {
-    method: "post",
+    method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -15,10 +15,10 @@ async function createProject(e) {
     //make sure to serialize your JSON body
     body: JSON.stringify({
       projectName: $projectName.value,
-      projectDesc: $projectDesc.value,
+      projectDesc: $projectDesc.children[0].innerHTML,
     }),
   });
-  console.log($projectDesc.value);
+  
   window.location.href = `/projects`;
 }
 

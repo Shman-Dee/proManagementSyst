@@ -51,7 +51,7 @@ module.exports = {
         where: {
           id: req.params.projectId,
         },
-        attributes: ["id", "projectName"],
+        attributes: ["id", "projectName", 'projectDesc'],
       });
       const tasksData = await Task.findAll({
         where: {
