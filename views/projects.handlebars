@@ -7,7 +7,7 @@
               {{project.projectName}}
             </div>
             <div class="card-body">
-              <p id="desc" class="card-text">{{{project.projectDesc}}}</p>
+              <p id="desc" class="card-text">{{{ project_tease project.projectDesc}}}...</p>
               <a href="/projects/{{project.id}}" class="btn btn-primary">View Project</a>
             </div>
           </div>
