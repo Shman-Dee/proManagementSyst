@@ -1,13 +1,28 @@
-<form>
-  <div class="mb-3">
-    <label for="projectName" class="form-label">Project Name</label>
-    <input type="text" class="form-control" id="projectName" />
-  </div>
-  <div class="mb-3">
-    <label for="projectDesc" class="form-label">Project Description</label>
-    <textarea id="projectDesc" class="form-control"></textarea>
-  </div>
-  <button type="submit" id="createProjectBtn" class="btn btn-primary">Create
-    Project</button>
-</form>
+<div class="container mt-4">
+  <h1>Create a Project</h1>
+  <form>
+    <div class="mb-3">
+      <label for="projectName" class="form-label">Project Name</label>
+      <input type="text" class="form-control" id="projectName" />
+    </div>
+    {{!-- <div class="mb-3">
+      <label for="projectDesc" class="form-label">Project Description</label>
+      <textarea id="projectDesc" class="form-control"></textarea>
+    </div> --}}
+    <div class="mb-3">
+      <label for="editor" class="form-label">Project Description</label>
+      <div id="editor" class="projectDesc">
+        
+      </div>
+    </div>
+    <button type="submit" id="createProjectBtn" class="btn btn-primary">Create
+      Project</button>
+  </form>
+</div>
 <script src="./js/project.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
