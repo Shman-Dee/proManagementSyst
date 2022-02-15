@@ -14,6 +14,7 @@ module.exports = {
       });
       res.json(newProject);
     } catch (error) {
+      console.log(error)
       res.json(error);
     }
   },
