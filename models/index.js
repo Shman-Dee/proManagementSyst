@@ -21,12 +21,12 @@ Task.belongsTo(Project, {
 });
 
 Task.hasMany(Note, {
-    foreignKey: 'noteID',
+    foreignKey: 'notId',
     onDelete: "CASCADE",
 });
 
 Note.belongsTo(Task, {
-    foreignKey: 'noteID',
+    foreignKey: 'notId',
 });
 
 

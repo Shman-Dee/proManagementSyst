@@ -38,3 +38,22 @@
     </table>
   {{/unless}}
 </div>
+=======
+<div class="row">
+  {{#each this}}
+    <div class="col-12 col-md-3 m-4">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          {{taskName}} 
+          {{#if completed}}
+            <span class=" badge bg-success">Completed</span>
+          {{/if}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{taskDesc}}</p>
+          <a href="/tasks/{{id}}" class="btn btn-primary">View Task</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
