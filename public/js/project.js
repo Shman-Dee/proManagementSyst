@@ -12,6 +12,9 @@ async function createProject(e) {
     if (desc.length < 20) {
       return ($error.textContent = "Please provide at least 20 characters in the description");
     }
+    if ($projectName.value.length < 4) {
+      return ($error.textContent = "Please provide at least 4 characters for project name");
+    }
     await fetch("/projects", {
       method: "POST",
       headers: {

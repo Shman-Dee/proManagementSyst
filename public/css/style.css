@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
 .error {
     font-size: 1.2rem;
 }
@@ -14,4 +20,34 @@
 
 #editor {
     height: 20em;
+}
+main{
+    flex: 1 0 auto;
+    margin-bottom: 10%;
+}
+
+
+
+
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    height: 6rem;
+  }
+
+footer a:visited {
+    color: white;
+}
+
+footer a:link {
+    color: white;
+}
+
+footer a:hover {
+    color: gold;
 }
