@@ -5,12 +5,11 @@ module.exports = {
         if (!req.session.user) {
             res.redirect("/login");
         }
-        const { projectName, userId, projectDesc } = req.body;
+        const { projectName, projectDesc } = req.body;
         try {
             const newProject = await Project.create({
                 projectName,
                 projectDesc,
-                userId,
             });
             res.json(newProject);
         } catch (error) {
@@ -79,20 +78,22 @@ module.exports = {
             res.json(error);
         }
     },
-    deleteProject: async(req, res) => {
-        if (!req.session.user) {
-            res.redirect("/login");
-        }
+    deleteProject: async (req, res) => {
         try {
-            console.log(req.body.id, 87);
-            await Project.destroy({
+            await Task.destroy({
                 where: {
-                    id: req.body.id,
+                    projectId: req.params.projectId,
                 }
             });
-            res.json('Project deleted')
+          const deletedProject = await Project.findByPk(req.params.projectId);
+          await Project.destroy({
+            where: {
+                id: req.params.projectId,
+            },
+          });
+          res.json(deletedProject);
         } catch (error) {
-            res.json({ error: error })
+          res.json(error);
         }
-    },
+      },
 };

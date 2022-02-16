@@ -16,13 +16,13 @@ Note.init({
             len: [20],
         },
     },
-    taskId: {
-        type: DataTypes.UUID,
-        references: {
-            model: "task",
-            key: "id",
-        },
-    },
+    // taskId: {
+    //     type: DataTypes.UUID,
+    //     references: {
+    //         model: "task",
+    //         key: "id",
+    //     },
+    // },
 }, {
     sequelize,
     timestamps: true,

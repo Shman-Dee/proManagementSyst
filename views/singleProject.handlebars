@@ -8,7 +8,7 @@
             <h2>{{project.projectName}}</h2>
               <p>{{{project.projectDesc}}}</p>
               {{>tasks tasks}}
-              <button id="deleteBtn" onclick="confirmDelete()" class="btn btn-danger">Delete</button>
+              
           </div>
           <div class="col-1"></div>
           <div class="col-sm-12 col-md-3">
@@ -19,6 +19,7 @@
       </div>
     </div>
     <button class="btn btn-primary" onclick="goBack()">Back to all Projects</button>
+    <button id="deleteBtn" class="align-right btn btn-danger">Delete Project</button>
   </section> 
 </div>
 <script>
