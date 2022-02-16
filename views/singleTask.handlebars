@@ -12,12 +12,12 @@
       {{!-- <button id="completedBtn">Submit</button> --}}
       <input type="hidden" id="projectId" value="{{task.projectId}}">
     </form>
-    {{>taskNotes}}
+    {{!-- {{>taskNotes}}
     {{#if notes}}
       {{#each notes as |note|}}
         {{{note.note_text}}}
       {{/each}}
-    {{/if}}
+    {{/if}} --}}
     <button class="btn btn-primary" onclick="goBack()">Back to project</button>
   </section>
 

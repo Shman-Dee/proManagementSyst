@@ -28,13 +28,6 @@ Project.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-    userId: {
-      type: DataTypes.UUID,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
