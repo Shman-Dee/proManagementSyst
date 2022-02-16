@@ -3,7 +3,8 @@ const router = require("express").Router();
 const {
     createProject,
     getAllProjects,
-    getProjectById
+    getProjectById,
+    deleteProject
 } = require("../../controllers/projectController");
 
 router.route("/")
@@ -12,5 +13,6 @@ router.route("/")
 
 router.route('/:projectId')
     .get(getProjectById)
+    .delete(deleteProject)
 
 module.exports = router;

@@ -22,14 +22,14 @@ body {
 #editor {
     height: 20em;
 }
-main{
+
+main {
     flex: 1 0 auto;
     padding-bottom: 10%;
 }
 
-
 footer {
-    position:fixed;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -37,7 +37,7 @@ footer {
     color: white;
     text-align: center;
     height: 6rem;
-  }
+}
 
 footer a:visited {
     color: white;

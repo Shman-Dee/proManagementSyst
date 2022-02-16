@@ -8,6 +8,7 @@
             <h2>{{project.projectName}}</h2>
               <p>{{{project.projectDesc}}}</p>
               {{>tasks tasks}}
+              <button id="deleteBtn" onclick="confirmDelete()" class="btn btn-danger">Delete</button>
           </div>
           <div class="col-1"></div>
           <div class="col-sm-12 col-md-3">
@@ -25,3 +26,4 @@
     window.history.back();
   }
 </script>
+<script src="../js/deleteProject.js"></script>
