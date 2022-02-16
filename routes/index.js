@@ -6,7 +6,6 @@ const noteRoutes = require('./noteRoutes');
 const { homeView } = require("../controllers/homeController");
 const { createProjectView } = require("../controllers/projectController");
 const { loginView, signUpView } = require('../controllers/userController');
-const { createNote } = require("../controllers/noteController");
 
 
 router.get("/", homeView);
@@ -18,6 +17,6 @@ router.use("/users", userRoutes);
 router.use("/createTask", taskRoutes);
 router.use("/tasks", taskRoutes);
 router.use("/createProject", createProjectView);
-router.use("/createNote", createNote);
+router.use("/notes", noteRoutes);
 
 module.exports = router;
