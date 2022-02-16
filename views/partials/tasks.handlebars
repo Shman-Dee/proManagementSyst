@@ -1,4 +1,4 @@
-  <div class="row">
+{{!-- <div class="row">
 
   {{#each this}}
       <div class="col-12 col-md-3 m-4">
@@ -16,4 +16,45 @@
           </div>
       </div>
   {{/each}}
-    </div>
+    </div> --}}
+
+<div class="container justify-content-center">
+  <h3 class="text-center mt-3"><u>Tasks</u></h3>
+  {{#unless this}}
+    <br />
+    <br />
+    <h3 class="text-center">You currently have no tasks.
+      <a href="/createTask">Click here to start</a></h3>
+  {{else}}
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Task Name</th>
+          <th scope="col">Short Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Created At</th>
+        </tr>
+
+      </thead>
+      {{#each this}}
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <a href="/tasks/{{id}}">{{taskName}}</a>
+            </td>
+            <td>{{{project_tease taskDesc}}}</td>
+            <td>{{#if completed}}
+                <span class="badge bg-success">Completed</span>
+              {{else}}
+                Active
+              {{/if}}
+            </td>
+            <td>{{format_date createdAt}}</td>
+          </tr>
+        </tbody>
+      {{/each}}
+    </table>
+  {{/unless}}
+</div>
