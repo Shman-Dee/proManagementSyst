@@ -1,4 +1,4 @@
-const { Task } = require('../models');
+const { Task, Note } = require('../models');
 
 module.exports = {
     createTask: async(req, res) => {
@@ -22,13 +22,23 @@ module.exports = {
         try {
             const taskData = await Task.findByPk(req.params.taskId);
             const task = taskData.get({ plain: true });
+            const notesData = await Note.findAll({
+                where: {
+                    taskId: req.params.taskId,
+                },
+                order: [
+                    ["createdAt", "DESC"]
+                ]
+            });
+            const notes = notesData.map(note => note.get({ plain: true }));
             res.render('singleTask', {
                 task,
+                notes,
                 loggedInUser: req.session.user || null,
             });
 
         } catch (error) {
-
+            res.json(error);
         }
     },
     updateTask: async(req, res) => {
