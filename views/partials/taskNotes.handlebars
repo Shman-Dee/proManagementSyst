@@ -1,0 +1,11 @@
+<form>
+  <div class="mb-3">
+    <label for="editor" class="form-label">Project Description</label>
+    <div id="editor" class="noteText"></div>
+  </div>
+  <button type="submit" id="createNoteBtn" class="btn btn-primary">Add Note</button>
+</form>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+  var quill = new Quill('#editor', { theme: 'snow' });
+</script>
