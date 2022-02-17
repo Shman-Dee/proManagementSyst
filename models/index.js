@@ -1,7 +1,6 @@
 const User = require("./User");
 const Task = require("./Task");
 const Project = require("./Project");
-const Note = require("./Note");
 
 
 Project.hasMany(Task, {
@@ -28,5 +27,4 @@ module.exports = {
     User,
     Task,
     Project,
-    Note,
 };
