@@ -4,23 +4,22 @@ function confirmDelete() {
     confirm('Are you sure that you want to delete this project?')
 }
 
-function deleteProject() {
+async function deleteProject() {
     const projectId = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
     let confirmDelete = confirm('Are you sure that you want to delete this project?');
     if (confirmDelete) {
-        fetch(`/projects/${projectId}`, {
+        await fetch(`/projects/${projectId}`, {
             method: "DELETE",
             body: JSON.stringify({
                 id: projectId
             }),
             headers: { "Content-Type": "application/json" },
-            
         });
-        location.href = `/projects`;
     }
+    location.href = `/projects`;
 }
 
 deleteBtn.addEventListener("click", deleteProject);
