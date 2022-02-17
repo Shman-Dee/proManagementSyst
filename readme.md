@@ -15,15 +15,15 @@
 
 ## Description
 
-This is a project management application to allow you to create projects, add user's, create project tasks, delete projects, and mark the status of whethere a task has been comleted or not.
+This is a project management application to allow you to create projects, add user's, create project tasks, delete projects, and mark the status of whether a task has been completed or not.
 
-The project was driven by the growing popularity of procrastination. With Project Managment System you can reorganize your daily goals.
+The project was driven by the growing popularity of procrastination. With Project Management System you can reorganize your daily goals.
 
-It was built to be a viable competator against the hundreds of similar applications found of the web today.
+It was built to be a viable competitor against the hundreds of similar applications found of the web today.
 
-Got problems? Not anymore! With our free, sleek, and simple approach to problem sovling.
+Got problems? Not anymore! With our free, sleek, and simple approach to problem solving.
 
-This project taught us that everyone has daily routines that need to be organized.  The possibilities are endless and now are made more efficient.
+This project taught us that everyone has daily routines that need to be organized. The possibilities are endless and now are made more efficient.
 
 ## Installation
 
@@ -31,11 +31,10 @@ To run the Project Management System a user needs to simply sign up for an accou
 
 ## Usage
 
-PMS was made over long panstacking hours by an amazing team of developers.  The application uses an array of technologies not limited to and including VSCode, HTML, CSS, JavaScript, Node.js, Postman, MySQL Workbench, a WYSIWYG editor and others.
+PMS was made over long painstaking hours by an amazing team of developers. The application uses an array of technologies not limited to and including VSCode, HTML, CSS, JavaScript, Node.js, Postman, MySQL Workbench, a WYSIWYG editor and others.
+![Projects](./public/images/Projects.png)
 
-https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
-
-<!-- Insert screenshot here -->
+![Single Project](./public/images/IndividualProject.png)
 
 ## Contributors
 
@@ -52,5 +51,3 @@ Mclnally</a> |
 <a class="hoverable" href="https://linktr.ee/stephensmoore" target="_blank">Stephen Moore</a> |
 <a class="hoverable" href="https://linktr.ee/jenya10016" target="_blank">Jenya
 Seletsky</a>
-
-Phone: 911 <br>
