@@ -30,6 +30,7 @@ This project taught us that everyone has daily routines that need to be organize
 To run the Project Management System a user needs to simply sign up for an account.
 
 ## Usage
+[Click here to view the live site deployed to Heroku](https://judo2000-pms.herokuapp.com/projects)  
 
 PMS was made over long painstaking hours by an amazing team of developers. The application uses an array of technologies not limited to and including VSCode, HTML, CSS, JavaScript, Node.js, Postman, MySQL Workbench, a WYSIWYG editor and others.
 
