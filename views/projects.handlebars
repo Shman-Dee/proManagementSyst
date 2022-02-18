@@ -6,39 +6,37 @@
     <h2 class="text-center">You currently have no projects.
       <a href="/createProject">Click here to start</a></h2>
   {{else}}
-    <table class="table table-striped mt-4">
-      <thead>
-        <tr>
-          <th colspan="4" scope="col"><a
-              class="btn btn-primary"
-              href="/createProject"
-            >Create New Project</a>
-            <br />
-            <br />
-          </th>
-
-        </tr>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Project Name</th>
-          <th scope="col">Short Description</th>
-          <th scope="col">Created At</th>
-        </tr>
-
-      </thead>
-      {{#each projects as |project|}}
-        <tbody>
+    <div class="table-responsive">
+      <table class="table table-striped mt-4">
+        <thead>
           <tr>
-            <th scope="row">1</th>
-            <td><a
-                href="/projects/{{project.id}}"
-                class=""
-              >{{project.projectName}}</a></td>
-            <td>{{{project_tease project.projectDesc}}}</td>
-            <td>{{format_date project.createdAt}}</td>
+            <th colspan="4" scope="col"><a
+                class="btn btn-primary"
+                href="/createProject"
+              >Create New Project</a>
+              <br />
+              <br />
+            </th>
           </tr>
-        </tbody>
-      {{/each}}
-    </table>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Short Description</th>
+            <th scope="col">Created At</th>
+          </tr>
+        </thead>
+        {{#each projects as |project|}}
+          <tbody>
+            <tr>
+              <td><a
+                  href="/projects/{{project.id}}"
+                  class=""
+                >{{project.projectName}}</a></td>
+              <td>{{{project_tease project.projectDesc}}}</td>
+              <td>{{format_date project.createdAt}}</td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
   {{/unless}}
 </div>
